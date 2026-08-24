@@ -1832,7 +1832,215 @@ img {
   text-transform: uppercase;
 }
 
-/* ========== Experience 杂志风时间线 ========== */
+/* ========== 工作经历卡片模式 ========== */
+.exp-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.exp-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 340px;
+  background: rgba(18, 18, 24, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.exp-card:hover {
+  border-color: rgba(110, 140, 255, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.exp-card-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.exp-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.exp-card:hover .exp-card-image img {
+  transform: scale(1.05);
+}
+
+.exp-card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(110, 140, 255, 0.15), rgba(139, 92, 246, 0.1));
+  font-size: 72px;
+  font-weight: 800;
+  color: rgba(110, 140, 255, 0.3);
+}
+
+.exp-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(18, 18, 24, 0.95) 0%, rgba(18, 18, 24, 0.6) 40%, transparent 70%);
+}
+
+.exp-card-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.exp-card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.exp-card-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: 'SF Mono', 'Monaco', monospace;
+}
+
+.exp-card-company {
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.exp-card-brand {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.exp-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.exp-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.exp-card-period {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.exp-card-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 500px;
+}
+
+.exp-card-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(110, 140, 255, 0.06);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  max-width: 500px;
+}
+
+.exp-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.exp-card-tag {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.exp-card-more {
+  position: absolute;
+  bottom: 24px;
+  right: 32px;
+  z-index: 2;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.exp-card:hover .exp-card-more {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 工作经历卡片响应式 */
+@media (max-width: 992px) {
+  .exp-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .exp-card-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    order: -1;
+  }
+  .exp-card-overlay {
+    background: linear-gradient(to bottom, rgba(18, 18, 24, 0.3) 0%, rgba(18, 18, 24, 0.9) 100%);
+  }
+  .exp-card-content {
+    padding: 28px 24px;
+  }
+  .exp-card-brand {
+    font-size: 32px;
+  }
+  .exp-card-more {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .exp-cards { gap: 20px; }
+  .exp-card-content { padding: 24px 20px; gap: 12px; }
+  .exp-card-brand { font-size: 26px; }
+  .exp-card-desc { font-size: 14px; }
+  .exp-card-result { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .exp-card-tags { display: none; }
+}
+
+/* ========== 时间线旧样式（保留兼容） ========== */
 .timeline-mag {
   display: flex;
   flex-direction: column;

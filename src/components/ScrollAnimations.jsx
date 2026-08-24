@@ -30,7 +30,7 @@ export default function ScrollAnimations() {
         )
       }
 
-      staggerItems('#experience .timeline-mag-item', '#experience')
+      staggerItems('#experience .exp-card', '#experience')
       staggerItems('#projects .project-card', '#projects')
       staggerItems('#advantages .capability-item', '#advantages')
       staggerItems('#gallery .accordion-item', '#gallery')
