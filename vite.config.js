@@ -16,7 +16,7 @@ export default defineConfig({
       output: {
         // 手动分包：第三方库单独打包
         manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'gsap-vendor': ['gsap'],
           'ogl-vendor': ['ogl'],
         },

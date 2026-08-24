@@ -99,7 +99,7 @@ export default function ProjectModal({ project, onClose }) {
                         <span>▶</span>
                       </div>
                     ) : (
-                      <img src={item.src} alt={`thumb ${i + 1}`} />
+                      <img src={item.src} alt={`thumb ${i + 1}`} loading="lazy" />
                     )}
                   </div>
                 ))}
