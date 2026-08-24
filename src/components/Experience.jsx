@@ -38,13 +38,6 @@ export default function Experience() {
   return (
     <section className="experience" id="experience">
       <div className="container">
-        {/* 模块编号标题 */}
-        <div className="module-header">
-          <span className="module-num">02</span>
-          <span className="module-label">/ EXPERIENCE</span>
-          <h2 className="module-title">工作经历</h2>
-        </div>
-
         <div className="exp-cards">
           {timeline.map((item, i) => (
             <div key={i} className="exp-card">

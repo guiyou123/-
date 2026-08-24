@@ -159,12 +159,6 @@ export default function Gallery() {
   return (
     <section className="gallery" id="gallery">
       <div className="container">
-        <div className="module-header">
-          <span className="module-num">04</span>
-          <span className="module-label">/ PORTFOLIO GALLERY</span>
-          <h2 className="module-title">作品展示</h2>
-        </div>
-
         {/* 手风琴折叠列表 */}
         <div className="accordion">
           {categories.map((cat, index) => (

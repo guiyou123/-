@@ -97,13 +97,6 @@ export default function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="container">
-        {/* 模块编号标题 */}
-        <div className="module-header">
-          <span className="module-num">03</span>
-          <span className="module-label">/ SELECTED PROJECTS</span>
-          <h2 className="module-title">精选项目</h2>
-        </div>
-
         <div className="project-cards">
           {projects.map((project, index) => (
             <div

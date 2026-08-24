@@ -49,8 +49,64 @@ main {
 }
 
 /* 非首页模块顶部间距，避开固定导航栏 */
-main > section:not(.hero) {
-  padding-top: 120px;
+main > section:not(.hero):not(.page-hero) {
+  padding-top: 60px;
+}
+
+/* ========== 页面级 Hero ========== */
+.page-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  padding-top: 140px;
+  padding-bottom: 80px;
+}
+
+.page-hero-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.page-hero-title {
+  font-size: clamp(48px, 10vw, 120px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+
+.page-hero-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.page-hero-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 40vh;
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+  .page-hero-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+  }
+  .page-hero-subtitle {
+    font-size: 16px;
+  }
+  .page-hero-desc {
+    font-size: 14px;
+  }
 }
 
 a {

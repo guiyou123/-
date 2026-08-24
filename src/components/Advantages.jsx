@@ -35,13 +35,6 @@ export default function Advantages() {
   return (
     <section className="advantages" id="advantages">
       <div className="container">
-        {/* 模块编号标题 */}
-        <div className="module-header">
-          <span className="module-num">05</span>
-          <span className="module-label">/ CAPABILITIES</span>
-          <h2 className="module-title">核心能力</h2>
-        </div>
-
         <div className="capabilities-list">
           {capabilities.map((item, index) => (
             <div key={index} className="capability-item">
