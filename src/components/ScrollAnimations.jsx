@@ -31,7 +31,7 @@ export default function ScrollAnimations() {
       }
 
       staggerItems('#experience .timeline-mag-item', '#experience')
-      staggerItems('#projects .project-mag-item', '#projects')
+      staggerItems('#projects .project-card', '#projects')
       staggerItems('#advantages .capability-item', '#advantages')
       staggerItems('#gallery .accordion-item', '#gallery')
       staggerItems('.workflow-step', '#ai-workflow')

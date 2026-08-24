@@ -2306,14 +2306,172 @@ img {
 .exp-timeline,
 .advantages-grid,
 .advantage-card,
-.projects-grid,
-.project-card-glow,
+.projects-mag-list,
+.project-mag-item,
 .contact-label,
 .contact-title,
 .contact-desc,
 .contact-actions,
 .contact-info {
   /* 旧样式保留但新组件不用这些类 */
+}
+
+/* ========== 精选项目卡片模式 ========== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.project-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--bg-card);
+  border-radius: 12px 12px 0 0;
+}
+
+.project-image img,
+.project-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image img,
+.project-card:hover .project-image video {
+  transform: scale(1.05);
+}
+
+.project-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(110, 140, 255, 0.1), rgba(139, 92, 246, 0.1));
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 8, 10, 0.8), transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-view {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.project-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.project-category {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.project-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  color: var(--accent);
+}
+
+.project-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.project-tag {
+  padding: 4px 10px;
+  background: rgba(110, 140, 255, 0.08);
+  border: 1px solid rgba(110, 140, 255, 0.15);
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--accent);
+}
+
+/* 卡片模式响应式 */
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    gap: 20px;
+  }
+  .project-image {
+    aspect-ratio: 16 / 9;
+  }
+  .project-content {
+    padding: 20px;
+  }
+  .project-title {
+    font-size: 18px;
+  }
+  .project-desc {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+  .project-tags {
+    display: none;
+  }
 }
 
 .modal-thumb.active {

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import BorderGlow from './BorderGlow/BorderGlow'
 import ProjectModal from './ProjectModal'
 
 const projects = [
@@ -7,10 +8,6 @@ const projects = [
     category: 'VIDEO PRODUCTION · AI + 实拍',
     title: '莱恩工厂宣传片',
     desc: '独立完成从策划、摄影到后期剪辑的全流程制作。融合AI脚本生成、AI文案、AI配音、AI视频生成与工厂实地拍摄素材，以一人团队实现专业级宣传片产出。',
-    metrics: [
-      { value: '1人', label: '独立完成' },
-      { value: '全流程', label: '策划到成片' },
-    ],
     tags: ['AI视频生成', 'AI配音', '实拍摄影', '剪辑调色'],
     video: '/projects/lion-factory.mp4',
     media: [
@@ -22,10 +19,6 @@ const projects = [
     category: 'BRAND MARKETING · MEDICAL',
     title: 'V-Check微检 · 新品发布营销',
     desc: '连续主导三届消毒供应中心学术会议新品发布全案，以悬念式推广逻辑打造传播节奏，统一极简医疗留白风视觉体系。',
-    metrics: [
-      { value: '3届', label: '学术会议全案' },
-      { value: '全渠道', label: '物料统一' },
-    ],
     tags: ['品牌全案', '学术会议', '海报设计', 'AI合成'],
     image: '/projects/vcheck-poster.jpg',
     media: [
@@ -40,10 +33,6 @@ const projects = [
     category: 'BRAND IDENTITY · VISUAL SYSTEM',
     title: '易博士清洗剂 · 品牌视觉系统',
     desc: '为旗下清洗剂品牌建立"极简医疗留白风、蓝白医疗色"视觉规范，统一海报、宣传册、产品外箱、社交媒体配图等全渠道物料设计语言。',
-    metrics: [
-      { value: '10+', label: '素材类型' },
-      { value: '全渠道', label: '视觉统一' },
-    ],
     tags: ['VI系统', '品牌规范', '物料设计'],
     image: '/projects/yiboshi-cover.jpg',
     media: [
@@ -64,10 +53,6 @@ const projects = [
     category: 'IP DESIGN · MASCOT',
     title: '莱恩医疗吉祥物 · 狮小宝',
     desc: '主导品牌吉祥物全案设计，从概念草图到最终落地，产出节日海报、咖啡周边、实验室场景等系列衍生物料，强化品牌亲和力与记忆点。',
-    metrics: [
-      { value: '10+', label: '衍生物料' },
-      { value: '全案', label: '概念到落地' },
-    ],
     tags: ['IP设计', '吉祥物', '周边衍生'],
     image: '/projects/shixiaobao.jpg',
     media: [
@@ -89,10 +74,6 @@ const projects = [
     category: 'CREATIVE DESIGN · MEDICAL',
     title: '晖致医药 · 文创设计项目',
     desc: '创作IP"V宝"及多个衍生形象，产出校招推文、工厂介绍、空宣会直播装修、双选会物料，获晖致医药2022年度最佳合作伙伴。',
-    metrics: [
-      { value: '年度', label: '最佳合作伙伴' },
-      { value: '全案', label: '文创物料' },
-    ],
     tags: ['IP创作', '文创物料', '印刷落地'],
     image: '/projects/huizhi-cover.png',
     media: [
@@ -118,36 +99,60 @@ export default function Projects() {
           <h2 className="module-title">精选项目</h2>
         </div>
 
-        <div className="projects-mag-list">
+        <div className="projects-grid">
           {projects.map((project, index) => (
-            <div
+            <BorderGlow
               key={index}
-              className="project-mag-item"
-              onClick={() => setActiveProject(project)}
+              edgeSensitivity={30}
+              glowColor="225 80 70"
+              backgroundColor="rgba(18, 18, 24, 0.6)"
+              borderRadius={16}
+              glowRadius={30}
+              glowIntensity={0.8}
+              coneSpread={20}
+              colors={['#6e8cff', '#8b5cf6', '#38bdf8']}
             >
-              <div className="project-mag-left">
-                <span className="project-mag-num">{project.num}</span>
-                <span className="project-mag-category">{project.category}</span>
-              </div>
-              <div className="project-mag-center">
-                <h3 className="project-mag-title">{project.title}</h3>
-                <p className="project-mag-desc">{project.desc}</p>
-                <div className="project-mag-tags">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="project-mag-tag">{tag}</span>
-                  ))}
+              <div
+                className="project-card"
+                onClick={() => setActiveProject(project)}
+              >
+                {/* 封面图/视频 */}
+                <div className="project-image">
+                  {project.video ? (
+                    <video
+                      src={project.video}
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      onMouseEnter={(e) => e.target.play().catch(() => {})}
+                      onMouseLeave={(e) => { e.target.pause(); e.target.currentTime = 0 }}
+                    />
+                  ) : project.image ? (
+                    <img src={project.image} alt={project.title} loading="lazy" />
+                  ) : (
+                    <div className="project-placeholder">
+                      <span>{project.num}</span>
+                    </div>
+                  )}
+                  <div className="project-overlay">
+                    <span className="project-view">查看详情 →</span>
+                  </div>
+                </div>
+
+                {/* 内容 */}
+                <div className="project-content">
+                  <span className="project-category">{project.category}</span>
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-desc">{project.desc}</p>
+                  <div className="project-tags">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="project-tag">{tag}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <div className="project-mag-right">
-                {project.metrics.map((m, i) => (
-                  <div key={i} className="project-mag-metric">
-                    <span className="metric-value">{m.value}</span>
-                    <span className="metric-label">{m.label}</span>
-                  </div>
-                ))}
-                <span className="project-mag-arrow">查看项目 →</span>
-              </div>
-            </div>
+            </BorderGlow>
           ))}
         </div>
       </div>
