@@ -11,6 +11,7 @@ const projects = [
     result: '1人独立完成全流程，AI+实拍结合',
     video: '/projects/lion-factory.mp4',
     image: '/projects/lion-factory-cover.jpg',
+    image: '/projects/lion-factory-cover.jpg',
     media: [
       { type: 'video', src: '/projects/lion-factory.mp4' },
     ],
