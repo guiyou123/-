@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import BorderGlow from './BorderGlow/BorderGlow'
 import ProjectModal from './ProjectModal'
 
 const projects = [
@@ -9,7 +8,9 @@ const projects = [
     title: '莱恩工厂宣传片',
     desc: '独立完成从策划、摄影到后期剪辑的全流程制作。融合AI脚本生成、AI文案、AI配音、AI视频生成与工厂实地拍摄素材，以一人团队实现专业级宣传片产出。',
     tags: ['AI视频生成', 'AI配音', '实拍摄影', '剪辑调色'],
+    result: '1人独立完成全流程，AI+实拍结合',
     video: '/projects/lion-factory.mp4',
+    image: '/projects/lion-factory-cover.jpg',
     media: [
       { type: 'video', src: '/projects/lion-factory.mp4' },
     ],
@@ -20,6 +21,7 @@ const projects = [
     title: 'V-Check微检 · 新品发布营销',
     desc: '连续主导三届消毒供应中心学术会议新品发布全案，以悬念式推广逻辑打造传播节奏，统一极简医疗留白风视觉体系。',
     tags: ['品牌全案', '学术会议', '海报设计', 'AI合成'],
+    result: '连续3届学术会议全案，全渠道物料统一',
     image: '/projects/vcheck-poster.jpg',
     media: [
       { type: 'image', src: '/works/V-Check产品海报.jpg' },
@@ -34,6 +36,7 @@ const projects = [
     title: '易博士清洗剂 · 品牌视觉系统',
     desc: '为旗下清洗剂品牌建立"极简医疗留白风、蓝白医疗色"视觉规范，统一海报、宣传册、产品外箱、社交媒体配图等全渠道物料设计语言。',
     tags: ['VI系统', '品牌规范', '物料设计'],
+    result: '10+素材类型，全渠道视觉统一',
     image: '/projects/yiboshi-cover.jpg',
     media: [
       { type: 'image', src: '/works/视频封面E-FOAM常规款.jpg' },
@@ -54,6 +57,7 @@ const projects = [
     title: '莱恩医疗吉祥物 · 狮小宝',
     desc: '主导品牌吉祥物全案设计，从概念草图到最终落地，产出节日海报、咖啡周边、实验室场景等系列衍生物料，强化品牌亲和力与记忆点。',
     tags: ['IP设计', '吉祥物', '周边衍生'],
+    result: '10+衍生物料，概念到落地全案',
     image: '/projects/shixiaobao.jpg',
     media: [
       { type: 'image', src: '/works/狮小宝.jpg' },
@@ -75,6 +79,7 @@ const projects = [
     title: '晖致医药 · 文创设计项目',
     desc: '创作IP"V宝"及多个衍生形象，产出校招推文、工厂介绍、空宣会直播装修、双选会物料，获晖致医药2022年度最佳合作伙伴。',
     tags: ['IP创作', '文创物料', '印刷落地'],
+    result: '获晖致医药2022年度最佳合作伙伴',
     image: '/projects/huizhi-cover.png',
     media: [
       { type: 'image', src: '/works/df9ac87d-3a69-41ea-9430-bf26ec6db311.png' },
@@ -99,60 +104,64 @@ export default function Projects() {
           <h2 className="module-title">精选项目</h2>
         </div>
 
-        <div className="projects-grid">
+        <div className="project-cards">
           {projects.map((project, index) => (
-            <BorderGlow
+            <div
               key={index}
-              edgeSensitivity={30}
-              glowColor="225 80 70"
-              backgroundColor="rgba(18, 18, 24, 0.6)"
-              borderRadius={16}
-              glowRadius={30}
-              glowIntensity={0.8}
-              coneSpread={20}
-              colors={['#6e8cff', '#8b5cf6', '#38bdf8']}
+              className="project-card-large"
+              onClick={() => setActiveProject(project)}
             >
-              <div
-                className="project-card"
-                onClick={() => setActiveProject(project)}
-              >
-                {/* 封面图/视频 */}
-                <div className="project-image">
-                  {project.video ? (
-                    <video
-                      src={project.video}
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                      onMouseEnter={(e) => e.target.play().catch(() => {})}
-                      onMouseLeave={(e) => { e.target.pause(); e.target.currentTime = 0 }}
-                    />
-                  ) : project.image ? (
-                    <img src={project.image} alt={project.title} loading="lazy" />
-                  ) : (
-                    <div className="project-placeholder">
-                      <span>{project.num}</span>
-                    </div>
-                  )}
-                  <div className="project-overlay">
-                    <span className="project-view">查看详情 →</span>
+              {/* 右侧背景图/视频 */}
+              <div className="project-card-large-image">
+                {project.video ? (
+                  <video
+                    src={project.video}
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    poster={project.image}
+                    onMouseEnter={(e) => e.target.play().catch(() => {})}
+                    onMouseLeave={(e) => { e.target.pause(); e.target.currentTime = 0 }}
+                  />
+                ) : project.image ? (
+                  <img src={project.image} alt={project.title} loading="lazy" />
+                ) : (
+                  <div className="project-card-large-placeholder">
+                    <span>{project.num}</span>
                   </div>
+                )}
+                <div className="project-card-large-overlay" />
+              </div>
+
+              {/* 左侧内容 */}
+              <div className="project-card-large-content">
+                <div className="project-card-large-top">
+                  <span className="project-card-large-num">{project.num}</span>
+                  <span className="project-card-large-category">{project.category}</span>
                 </div>
 
-                {/* 内容 */}
-                <div className="project-content">
-                  <span className="project-category">{project.category}</span>
-                  <h3 className="project-title">{project.title}</h3>
-                  <p className="project-desc">{project.desc}</p>
-                  <div className="project-tags">
-                    {project.tags.map((tag, i) => (
-                      <span key={i} className="project-tag">{tag}</span>
-                    ))}
-                  </div>
+                <h3 className="project-card-large-title">{project.title}</h3>
+
+                <p className="project-card-large-desc">{project.desc}</p>
+
+                <div className="project-card-large-result">
+                  <span className="result-label">核心成果</span>
+                  <span className="result-text">{project.result}</span>
+                </div>
+
+                <div className="project-card-large-tags">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="project-card-large-tag">{tag}</span>
+                  ))}
                 </div>
               </div>
-            </BorderGlow>
+
+              {/* 右下角查看链接 */}
+              <div className="project-card-large-more">
+                <span>查看项目详情 →</span>
+              </div>
+            </div>
           ))}
         </div>
       </div>
