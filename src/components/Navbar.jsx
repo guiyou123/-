@@ -31,7 +31,7 @@ export default function Navbar() {
 
   const navItems = [
     { path: '/', label: '首页' },
-    { path: '/projects', label: '精选项目' },
+    { path: '/projects', label: '代表项目' },
     { path: '/gallery', label: '作品展示' },
     { path: '/advantages', label: '核心能力' },
     { path: '/experience', label: '工作经历' },
