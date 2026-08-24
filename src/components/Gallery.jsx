@@ -1,49 +1,49 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 
-// 鎸変綔鍝侀泦鏂囦欢澶瑰師鍚嶇粍缁囨暟鎹?
+// 按作品集文件夹原名组织数据
 const categories = [
   {
-    name: 'Medizymes 瑙嗚璇嗗埆绯荤粺',
+    name: 'Medizymes 视觉识别系统',
     type: 'image',
-    cover: '/works/Medizymes-瑙嗚璇嗗埆绯荤粺棣栧浘.jpg',
+    cover: '/works/Medizymes-视觉识别系统首图.jpg',
     images: [
-      '/works/Medizymes-瑙嗚璇嗗埆绯荤粺棣栧浘.jpg',
-      '/works/Medizymes-瑙嗚璇嗗埆绯荤粺1.jpg',
-      '/works/Medizymes 瑙嗚璇嗗埆绯荤粺2.jpg',
+      '/works/Medizymes-视觉识别系统首图.jpg',
+      '/works/Medizymes-视觉识别系统1.jpg',
+      '/works/Medizymes 视觉识别系统2.jpg',
     ],
-    desc: '铔嬬櫧閰跺搧鐗岃瑙夎瘑鍒郴缁熻璁★紝寤虹珛缁熶竴鍝佺墝瑙嗚瑙勮寖銆?,
+    desc: '蛋白酶品牌视觉识别系统设计，建立统一品牌视觉规范。',
   },
   {
-    name: 'novizme铔嬬櫧閰跺埗閫犲晢',
+    name: 'novizme蛋白酶制造商',
     type: 'image',
-    cover: '/works/褰╅〉20231028_鐢绘澘-1.jpg',
+    cover: '/works/彩页20231028_画板-1.jpg',
     images: [
-      '/works/褰╅〉20231028_鐢绘澘-1.jpg', '/works/褰╅〉20231028_鐢绘澘 1 鍓湰.jpg',
-      '/works/褰╅〉20231028_鐢绘澘 1 鍓湰 2.jpg',
+      '/works/彩页20231028_画板-1.jpg', '/works/彩页20231028_画板 1 副本.jpg',
+      '/works/彩页20231028_画板 1 副本 2.jpg',
     ],
-    desc: '铔嬬櫧閰跺埗閫犲晢浜у搧褰╅〉璁捐锛屽鐗堟湰鏂规杈撳嚭銆?,
+    desc: '蛋白酶制造商产品彩页设计，多版本方案输出。',
   },
   {
-    name: '鎬濇嘲鏋椾骇鍝佽璁?,
+    name: '思泰林产品设计',
     type: 'image',
-    cover: '/works/鎬濇嘲鏋楁竻娲楀墏绯诲垪浜у搧璁捐1.jpg',
+    cover: '/works/思泰林清洗剂系列产品设计1.jpg',
     images: [
-      '/works/鎬濇嘲鏋楁竻娲楀墏绯诲垪浜у搧璁捐1.jpg', '/works/鎬濇嘲鏋楁竻娲楀墏绯诲垪浜у搧璁捐2.jpg',
-      '/works/鎬濇嘲鏋楁竻娲楀墏绯诲垪浜у搧璁捐3.jpg', '/works/鎬濇嘲鏋楁竻娲楀墏绯诲垪浜у搧璁捐4.jpg',
+      '/works/思泰林清洗剂系列产品设计1.jpg', '/works/思泰林清洗剂系列产品设计2.jpg',
+      '/works/思泰林清洗剂系列产品设计3.jpg', '/works/思泰林清洗剂系列产品设计4.jpg',
     ],
-    desc: '鎬濇嘲鏋楁竻娲楀墏绯诲垪浜у搧鍖呰璁捐锛屽叏绯诲垪缁熶竴瑙嗚璇█銆?,
+    desc: '思泰林清洗剂系列产品包装设计，全系列统一视觉语言。',
   },
   {
-    name: '鐖卞繀閫傛竻娲楀墏',
+    name: '爱必适清洗剂',
     type: 'image',
-    cover: '/works/鐖卞繀閫傜豢鐩栨晥鏋滃浘.jpg',
+    cover: '/works/爱必适绿盖效果图.jpg',
     images: [
-      '/works/鐖卞繀閫傜豢鐩栨晥鏋滃浘.jpg', '/works/鐖卞繀閫傝摑鐩栨晥鏋滃浘.jpg',
+      '/works/爱必适绿盖效果图.jpg', '/works/爱必适蓝盖效果图.jpg',
     ],
-    desc: '鐖卞繀閫傛竻娲楀墏浜у搧鏁堟灉鍥捐璁★紝缁跨洊/钃濈洊鍙岀増鏈€?,
+    desc: '爱必适清洗剂产品效果图设计，绿盖/蓝盖双版本。',
   },
   {
-    name: '浜у搧鍖呰绫?,
+    name: '产品包装类',
     type: 'image',
     cover: '/works/4ea70d43-6088-4855-b07b-6ce7660ee126.jpg',
     images: [
@@ -56,10 +56,10 @@ const categories = [
       '/works/ba784c7b-0ee1-45f1-9fcb-4cb7a2d215cb.jpg',
       '/works/c7022aef-b9f8-4c8b-9264-8f689299cf91.jpg',
     ],
-    desc: '澶氬搧绫讳骇鍝佸寘瑁呰璁″悎闆嗭紝娑电洊鍖荤枟鍣ㄦ銆佸伐涓氳€楁潗绛夐鍩熴€?,
+    desc: '多品类产品包装设计合集，涵盖医疗器械、工业耗材等领域。',
   },
   {
-    name: '鏅栬嚧鍖昏嵂 路 鏂囧垱璁捐椤圭洰',
+    name: '晖致医药 · 文创设计项目',
     type: 'image',
     cover: '/works/640.jpg',
     images: [
@@ -77,17 +77,17 @@ const categories = [
       '/works/df9ac87d-3a69-41ea-9430-bf26ec6db311.jpg',
       '/works/e04a457e-213c-4e89-8878-3e738707033d.jpg',
     ],
-    desc: '鏅栬嚧鍖昏嵂鏂囧垱璁捐椤圭洰锛岃幏2022骞村害鏈€浣冲悎浣滀紮浼达紝鍚獻P褰㈣薄銆佺墿鏂欍€佹椿鍔ㄨ瑙夌瓑銆?,
+    desc: '晖致医药文创设计项目，获2022年度最佳合作伙伴，含IP形象、物料、活动视觉等。',
   },
   {
-    name: 'SKF鏂嚡瀛氬井淇″钩鍙?,
+    name: 'SKF斯凯孚微信平台',
     type: 'image',
     cover: '/works/9c93729e-bf7f-438c-a56f-6766d82f4953.jpg',
     images: ['/works/9c93729e-bf7f-438c-a56f-6766d82f4953.jpg'],
-    desc: 'SKF鏂嚡瀛氬井淇″钩鍙拌瑙夎璁★紝闀垮浘鎺ㄦ枃鍙婃椿鍔ㄧ墿鏂欍€?,
+    desc: 'SKF斯凯孚微信平台视觉设计，长图推文及活动物料。',
   },
   {
-    name: '涓€姹借В鏀鹃暱鏄ユ櫤鎱у杞﹀叕鍙稿井淇″钩鍙?,
+    name: '一汽解放长春智慧客车公司微信平台',
     type: 'image',
     cover: '/works/66289104-a7f6-4b66-8aec-b319516516ec.jpg',
     images: [
@@ -95,36 +95,36 @@ const categories = [
       '/works/871a1cdc-f429-4d0c-9c08-2ce145ac3c59.jpg',
       '/works/e4bc30e7-696f-431d-b837-510ebbddc228.jpg',
     ],
-    desc: '涓€姹借В鏀炬櫤鎱у杞﹀井淇″钩鍙拌瑙夎璁★紝鍝佺墝鎺ㄦ枃鍙婃椿鍔ㄩ暱鍥俱€?,
+    desc: '一汽解放智慧客车微信平台视觉设计，品牌推文及活动长图。',
   },
   {
-    name: '鑻忓皵瀵垮井淇″钩鍙?,
+    name: '苏尔寿微信平台',
     type: 'image',
     cover: '/works/45afc8ee-1834-41df-a741-38e3b6fa4cee.jpg',
     images: [
       '/works/45afc8ee-1834-41df-a741-38e3b6fa4cee.jpg',
       '/works/8bfeafd7-68e1-4f3a-83fd-84cd1db8e52c.jpg',
     ],
-    desc: '鑻忓皵瀵垮井淇″钩鍙拌瑙夎璁★紝浼佷笟鎺ㄦ枃鍙婃椿鍔ㄧ墿鏂欍€?,
+    desc: '苏尔寿微信平台视觉设计，企业推文及活动物料。',
   },
   {
-    name: 'LEPO涔愭櫘鍖荤枟宸ュ巶瀹ｄ紶鐗?,
+    name: 'LEPO乐普医疗工厂宣传片',
     type: 'video',
     cover: null,
     images: [],
-    desc: '涔愭櫘鍖荤枟鏃犵汉甯冨伐鍘傚浼犵墖锛屽疄鍦版媿鎽勪笌鍚庢湡鍒朵綔銆?,
+    desc: '乐普医疗无纺布工厂宣传片，实地拍摄与后期制作。',
   },
   {
-    name: '鏄撳崥澹骇鍝佽棰?,
+    name: '易博士产品视频',
     type: 'video',
     cover: '/projects/yiboshi-cover.jpg',
     images: [],
     videos: [
-      { src: '/projects/yiboshi-efoam.mp4', name: 'E-FOAM 楂樻晥娉℃搏淇濇箍鍓? },
-      { src: '/projects/yiboshi-foambox.mp4', name: 'FOAM BOX 娉℃搏鍙戠敓鍣? },
-      { src: '/projects/yiboshi-foamer.mp4', name: '渚挎惡寮忔场娌彂鐢熷櫒' },
+      { src: '/projects/yiboshi-efoam.mp4', name: 'E-FOAM 高效泡沫保湿剂' },
+      { src: '/projects/yiboshi-foambox.mp4', name: 'FOAM BOX 泡沫发生器' },
+      { src: '/projects/yiboshi-foamer.mp4', name: '便携式泡沫发生器' },
     ],
-    desc: '鏄撳崥澹棗涓嬫竻娲楀墏绯诲垪浜у搧瑙嗛锛屾兜鐩朎-FOAM楂樻晥娉℃搏淇濇箍鍓傘€丗OAM BOX娉℃搏鍙戠敓鍣ㄥ強渚挎惡寮忔场娌彂鐢熷櫒锛屼粠浜у搧灞曠ず鍒颁娇鐢ㄥ満鏅殑鍏ㄦ祦绋嬭棰戝埗浣溿€?,
+    desc: '易博士旗下清洗剂系列产品视频，涵盖E-FOAM高效泡沫保湿剂、FOAM BOX泡沫发生器及便携式泡沫发生器，从产品展示到使用场景的全流程视频制作。',
   },
 ]
 
@@ -159,11 +159,11 @@ export default function Gallery() {
   return (
     <section className="gallery" id="gallery">
       <div className="container">
-        {/* 鎵嬮鐞存姌鍙犲垪琛?*/}
+        {/* 手风琴折叠列表 */}
         <div className="accordion">
           {categories.map((cat, index) => (
             <div key={index} className={`accordion-item ${openIndex === index ? 'open' : ''}`}>
-              {/* 鎶樺彔鏍囬鏍?*/}
+              {/* 折叠标题栏 */}
               <button
                 className="accordion-header"
                 onClick={() => toggle(index)}
@@ -171,18 +171,18 @@ export default function Gallery() {
                 <div className="accordion-header-left">
                   <span className="accordion-index">{String(index + 1).padStart(2, '0')}</span>
                   <span className="accordion-name">{cat.name}</span>
-                  {cat.type === 'video' && <span className="accordion-badge video">瑙嗛</span>}
-                  {cat.type === 'image' && <span className="accordion-badge">{cat.images.length}寮?/span>}
-                  {cat.type === 'empty' && <span className="accordion-badge">寰呮洿鏂?/span>}
+                  {cat.type === 'video' && <span className="accordion-badge video">视频</span>}
+                  {cat.type === 'image' && <span className="accordion-badge">{cat.images.length}张</span>}
+                  {cat.type === 'empty' && <span className="accordion-badge">待更新</span>}
                 </div>
-                <span className={`accordion-arrow ${openIndex === index ? 'up' : ''}`}>鈻?/span>
+                <span className={`accordion-arrow ${openIndex === index ? 'up' : ''}`}>▼</span>
               </button>
 
-              {/* 灞曞紑鍐呭 */}
+              {/* 展开内容 */}
               {openIndex === index && (
                 <div className="accordion-content">
                   <div className="accordion-content-inner">
-                    {/* 灏侀潰鍥?*/}
+                    {/* 封面图 */}
                     <div
                       className="accordion-cover"
                       onClick={() => openLightbox(cat)}
@@ -193,7 +193,7 @@ export default function Gallery() {
                           <img src={cat.cover} alt={cat.name} loading="lazy" />
                           {cat.images.length > 1 && (
                             <div className="accordion-cover-overlay">
-                              <span className="cover-zoom">馃攳 鐐瑰嚮鏌ョ湅鍏ㄩ儴 {cat.images.length} 寮?/span>
+                              <span className="cover-zoom">🔍 点击查看全部 {cat.images.length} 张</span>
                             </div>
                           )}
                         </>
@@ -201,20 +201,20 @@ export default function Gallery() {
                         <div className="accordion-cover-placeholder">
                           {cat.type === 'video' ? (
                             <>
-                              <span className="placeholder-icon">鈻?/span>
-                              <span className="placeholder-text">瑙嗛浣滃搧</span>
+                              <span className="placeholder-icon">▶</span>
+                              <span className="placeholder-text">视频作品</span>
                             </>
                           ) : (
                             <>
-                              <span className="placeholder-icon">馃搧</span>
-                              <span className="placeholder-text">浣滃搧鏁寸悊涓?/span>
+                              <span className="placeholder-icon">📁</span>
+                              <span className="placeholder-text">作品整理中</span>
                             </>
                           )}
                         </div>
                       )}
                     </div>
 
-                    {/* 椤圭洰鎻忚堪 */}
+                    {/* 项目描述 */}
                     <div className="accordion-desc">
                       <p>{cat.desc}</p>
                       {cat.images.length > 0 && (
@@ -261,18 +261,18 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* 鐏 */}
+      {/* 灯箱 */}
       {lightbox && (
         <div className="lightbox" onClick={() => setLightbox(null)}>
-          <button className="lightbox-close" onClick={() => setLightbox(null)}>鉁?/button>
-          <button className="lightbox-nav prev" onClick={(e) => { e.stopPropagation(); prevImage(); }}>鈥?/button>
+          <button className="lightbox-close" onClick={() => setLightbox(null)}>✕</button>
+          <button className="lightbox-nav prev" onClick={(e) => { e.stopPropagation(); prevImage(); }}>‹</button>
           <div className="lightbox-content" onClick={e => e.stopPropagation()}>
             <img src={lightbox.images[lightbox.currentIndex]} alt={lightbox.title} />
             <div className="lightbox-title">
-              {lightbox.title} 路 {lightbox.currentIndex + 1} / {lightbox.images.length}
+              {lightbox.title} · {lightbox.currentIndex + 1} / {lightbox.images.length}
             </div>
           </div>
-          <button className="lightbox-nav next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>鈥?/button>
+          <button className="lightbox-nav next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>›</button>
         </div>
       )}
     </section>
