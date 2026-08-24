@@ -25,19 +25,12 @@ export default function Profile() {
         </div>
 
         <div className="profile-inner">
-          {/* 左侧头像 */}
-          <div className="profile-portrait">
-            <div className="portrait-frame">
-              <img src="/avatar.jpg" alt="侯贵有" loading="lazy" />
-            </div>
-            <div className="portrait-meta">
-              <div className="portrait-name">侯贵有</div>
-              <div className="portrait-role">视觉设计师 / AI设计师 / 品牌设计师</div>
-            </div>
-          </div>
-
-          {/* 右侧内容 */}
+          {/* 内容 */}
           <div className="profile-content">
+            <div className="profile-identity">
+              <h2 className="profile-name">侯贵有</h2>
+              <span className="profile-role-tag">视觉设计师 / AI设计师 / 品牌设计师</span>
+            </div>
             <h2 className="profile-title">
               全链路视觉设计与品牌内容生产者
             </h2>
