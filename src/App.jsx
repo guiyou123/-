@@ -27,7 +27,7 @@ function ProjectsPage() {
       <PageHero
         num="03"
         label="SELECTED PROJECTS"
-        title="设计让每一个项目都不止于好看"
+        title="设计不止让每个项目更好看"
         subtitle="Selected Works"
         desc="从品牌视觉全案到AI内容生产，从宣传片独立制作到学术会议营销，以下是近年代表性项目的精选呈现。"
       />
