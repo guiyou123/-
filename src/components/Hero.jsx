@@ -56,7 +56,7 @@ export default function Hero() {
               <span className="role-cn">视觉设计 · AI设计 · 品牌设计</span>
             </div>
             <button className="hero-cta-mag" onClick={() => scrollTo('projects')}>
-              VIEW SELECTED WORK
+              查看作品
               <span className="arrow">↗</span>
             </button>
           </div>
