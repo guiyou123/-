@@ -11,14 +11,13 @@ export const EASE = {
   inOut: 'power3.inOut',
 }
 
-// 首屏 Opening Animation
+// 首屏 Opening Animation - 优化版：纯位移，去掉缩放避免中文字体重绘卡顿
 export function playHeroOpening(heroRef) {
   const tl = gsap.timeline({ defaults: { ease: EASE.smooth } })
 
   const root = heroRef.current
   if (!root) return
 
-  // 遮罩层
   const mask = root.querySelector('.hero-mask')
   const topRow = root.querySelector('.hero-top-row')
   const titleLines = root.querySelectorAll('.hero-title .line-inner')
@@ -26,38 +25,31 @@ export function playHeroOpening(heroRef) {
   const bottomRow = root.querySelector('.hero-bottom-row')
   const scroll = root.querySelector('.hero-scroll')
 
-  // 初始状态
-  gsap.set(titleLines, { yPercent: 110 })
-  gsap.set(topRow, { opacity: 0, y: -20 })
-  gsap.set(subtitle, { opacity: 0, y: 30 })
-  gsap.set(bottomRow, { opacity: 0, y: 20 })
+  // 初始状态 - 纯位移 + force3D 开启 GPU 加速
+  gsap.set(titleLines, { yPercent: 110, force3D: true })
+  gsap.set(topRow, { opacity: 0, y: -20, force3D: true })
+  gsap.set(subtitle, { opacity: 0, y: 24, force3D: true })
+  gsap.set(bottomRow, { opacity: 0, y: 16, force3D: true })
   gsap.set(scroll, { opacity: 0 })
 
-  // 时间线
+  // 时间线 - 节奏放慢，缓动更丝滑
   tl
-    // 遮罩向上揭开
     .to(mask, {
       yPercent: -100,
-      duration: 1.4,
-      ease: EASE.expo,
+      duration: 1.2,
+      ease: 'power3.inOut',
     }, 0)
-    .to(topRow, { opacity: 1, y: 0, duration: 0.8 }, 0.5)
-    // 标题行从遮罩下方滑入
+    .to(topRow, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, 0.4)
+    // 标题行纯位移滑入 - 长 duration，慢缓动，无缩放
     .to(titleLines, {
       yPercent: 0,
-      duration: 1.3,
-      stagger: 0.12,
-      ease: EASE.expo,
-    }, 0.7)
-    // 标题压缩后归位
-    .fromTo(titleLines,
-      { scaleY: 1.2, scaleX: 0.9, transformOrigin: 'bottom' },
-      { scaleY: 1, scaleX: 1, duration: 0.7, stagger: 0.1, ease: EASE.soft },
-      1.0
-    )
-    .to(subtitle, { opacity: 1, y: 0, duration: 0.9 }, 1.5)
-    .to(bottomRow, { opacity: 1, y: 0, duration: 0.8 }, 1.8)
-    .to(scroll, { opacity: 1, duration: 0.8 }, 2.1)
+      duration: 1.4,
+      stagger: 0.14,
+      ease: 'power3.out',
+    }, 0.6)
+    .to(subtitle, { opacity: 1, y: 0, duration: 1.0, ease: 'power3.out' }, 1.4)
+    .to(bottomRow, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, 1.7)
+    .to(scroll, { opacity: 1, duration: 0.8, ease: 'power2.out' }, 2.0)
 
   return tl
 }
@@ -123,7 +115,6 @@ export function animateImageReveal(trigger, imgSelector) {
   if (!images.length) return
 
   images.forEach(img => {
-    // 给图片包一层 reveal 容器
     const wrapper = img.parentElement
     if (!wrapper.classList.contains('reveal-wrap')) {
       wrapper.classList.add('reveal-wrap')
@@ -140,7 +131,6 @@ export function animateImageReveal(trigger, imgSelector) {
       },
     })
 
-    // 图片内部轻微放大
     gsap.fromTo(img,
       { scale: 1.15 },
       {
