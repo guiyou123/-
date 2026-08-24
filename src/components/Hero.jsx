@@ -15,10 +15,9 @@ export default function Hero() {
 
   return (
     <section className="hero" id="hero" ref={heroRef}>
-      {/* 开场遮罩 */}
       <div className="hero-mask" />
 
-      {/* 视频背景（叠加在全局渐变之上） */}
+      {/* 视频背景 */}
       <video
         className="hero-video"
         autoPlay
@@ -26,7 +25,6 @@ export default function Hero() {
         loop
         playsInline
         preload="metadata"
-        poster=""
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
@@ -34,27 +32,39 @@ export default function Hero() {
 
       <div className="container">
         <div className="hero-content">
-          <div className="hero-eyebrow">Visual Designer · AI Designer · Brand Designer</div>
+          {/* 顶部标签行 */}
+          <div className="hero-top-row">
+            <span className="hero-portfolio-tag">PORTFOLIO</span>
+            <span className="hero-year">HOU GUIYOU / PORTFOLIO 2026</span>
+          </div>
+
+          {/* 主标题 - 杂志风 */}
           <h1 className="hero-title">
-            <span className="line"><span className="line-inner">用设计构建</span></span>
-            <span className="line"><span className="line-inner">品牌的<span className="accent">视觉语言</span></span></span>
+            <span className="line"><span className="line-inner">VISUAL</span></span>
+            <span className="line"><span className="line-inner">DESIGN <span className="accent">&</span></span></span>
+            <span className="line"><span className="line-inner">AI CRAFT.</span></span>
           </h1>
-          <p className="hero-desc">
-            7年视觉设计与品牌营销经验，深耕医疗与制造行业。
-            擅长将AI工具与实拍融合，独立完成从品牌策略到视频成片的全链路内容生产。
+
+          {/* 副标题 */}
+          <p className="hero-subtitle-mag">
+            以视觉设计连接品牌表达与商业增长
           </p>
-          <div className="hero-actions">
-            <button className="btn-primary" onClick={() => scrollTo('projects')}>
-              查看作品
-              <span>→</span>
-            </button>
-            <button className="btn-ghost" onClick={() => scrollTo('contact')}>
-              联系合作
+
+          {/* 底部信息行 */}
+          <div className="hero-bottom-row">
+            <div className="hero-role">
+              <span className="role-label">VISUAL DESIGNER · AI DESIGNER · BRAND DESIGNER</span>
+              <span className="role-cn">视觉设计 · AI设计 · 品牌设计</span>
+            </div>
+            <button className="hero-cta-mag" onClick={() => scrollTo('projects')}>
+              VIEW SELECTED WORK
+              <span className="arrow">↗</span>
             </button>
           </div>
         </div>
       </div>
 
+      {/* 滚动提示 */}
       <div className="hero-scroll">
         <span>SCROLL</span>
         <div className="scroll-line" />

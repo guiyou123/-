@@ -20,17 +20,17 @@ export function playHeroOpening(heroRef) {
 
   // 遮罩层
   const mask = root.querySelector('.hero-mask')
-  const eyebrow = root.querySelector('.hero-eyebrow')
+  const topRow = root.querySelector('.hero-top-row')
   const titleLines = root.querySelectorAll('.hero-title .line-inner')
-  const desc = root.querySelector('.hero-desc')
-  const actions = root.querySelector('.hero-actions')
+  const subtitle = root.querySelector('.hero-subtitle-mag')
+  const bottomRow = root.querySelector('.hero-bottom-row')
   const scroll = root.querySelector('.hero-scroll')
 
   // 初始状态
   gsap.set(titleLines, { yPercent: 110 })
-  gsap.set(eyebrow, { opacity: 0, y: 20 })
-  gsap.set(desc, { opacity: 0, y: 30 })
-  gsap.set(actions, { opacity: 0, y: 20 })
+  gsap.set(topRow, { opacity: 0, y: -20 })
+  gsap.set(subtitle, { opacity: 0, y: 30 })
+  gsap.set(bottomRow, { opacity: 0, y: 20 })
   gsap.set(scroll, { opacity: 0 })
 
   // 时间线
@@ -41,23 +41,23 @@ export function playHeroOpening(heroRef) {
       duration: 1.4,
       ease: EASE.expo,
     }, 0)
-    .to(eyebrow, { opacity: 1, y: 0, duration: 0.8 }, 0.6)
+    .to(topRow, { opacity: 1, y: 0, duration: 0.8 }, 0.5)
     // 标题行从遮罩下方滑入
     .to(titleLines, {
       yPercent: 0,
       duration: 1.3,
       stagger: 0.12,
       ease: EASE.expo,
-    }, 0.8)
-    // 标题压缩后归位（scaleY 拉伸后恢复）
+    }, 0.7)
+    // 标题压缩后归位
     .fromTo(titleLines,
       { scaleY: 1.2, scaleX: 0.9, transformOrigin: 'bottom' },
       { scaleY: 1, scaleX: 1, duration: 0.7, stagger: 0.1, ease: EASE.soft },
-      1.1
+      1.0
     )
-    .to(desc, { opacity: 1, y: 0, duration: 0.9 }, 1.6)
-    .to(actions, { opacity: 1, y: 0, duration: 0.8 }, 1.9)
-    .to(scroll, { opacity: 1, duration: 0.8 }, 2.2)
+    .to(subtitle, { opacity: 1, y: 0, duration: 0.9 }, 1.5)
+    .to(bottomRow, { opacity: 1, y: 0, duration: 0.8 }, 1.8)
+    .to(scroll, { opacity: 1, duration: 0.8 }, 2.1)
 
   return tl
 }

@@ -1,17 +1,19 @@
 import Grainient from './components/Grainient/Grainient'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Profile from './components/Profile'
+import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Gallery from './components/Gallery'
 import Advantages from './components/Advantages'
-import Experience from './components/Experience'
+import AIWorkflow from './components/AIWorkflow'
 import Contact from './components/Contact'
 import ScrollAnimations from './components/ScrollAnimations'
 
 function App() {
   return (
     <>
-      {/* 全局动态渐变背景（固定定位，覆盖整个网页） */}
+      {/* 全局动态渐变背景 */}
       <div className="global-bg">
         <Grainient
           color1="#6e8cff"
@@ -43,10 +45,12 @@ function App() {
       <ScrollAnimations />
       <main>
         <Hero />
+        <Profile />
+        <Experience />
         <Projects />
         <Gallery />
         <Advantages />
-        <Experience />
+        <AIWorkflow />
         <Contact />
       </main>
     </>
