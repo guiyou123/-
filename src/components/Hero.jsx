@@ -40,9 +40,8 @@ export default function Hero() {
 
           {/* 主标题 - 杂志风 */}
           <h1 className="hero-title">
-            <span className="line"><span className="line-inner">VISUAL</span></span>
-            <span className="line"><span className="line-inner">DESIGN <span className="accent">&</span></span></span>
-            <span className="line"><span className="line-inner">AI CRAFT.</span></span>
+            <span className="line"><span className="line-inner">用设计构建</span></span>
+            <span className="line"><span className="line-inner">品牌的<span className="accent">视觉语言</span></span></span>
           </h1>
 
           {/* 副标题 */}
