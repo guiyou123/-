@@ -3,7 +3,7 @@ const timeline = [
     num: '01',
     period: '2023.06 — 至今',
     company: '莱恩医疗 Lion Medical',
-    brand: '大连工厂',
+    brand: '莱恩医疗',
     title: '品牌宣传专员 / 视觉负责人',
     desc: '主导V-Check微检产品线全球营销，连续三届学术会议新品发布全案，独立完成工厂宣传片制作，建立易博士品牌视觉规范。',
     tags: ['品牌全案', '学术会议', '视频制作', 'AI内容'],
