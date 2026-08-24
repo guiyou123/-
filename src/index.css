@@ -49,7 +49,7 @@ main {
 }
 
 /* 非首页模块顶部间距，避开固定导航栏 */
-main > section:not(.hero):not(.page-hero) {
+main > section:not(.hero):not(.page-hero):not(.contact) {
   padding-top: 60px;
 }
 
@@ -990,6 +990,8 @@ img {
   position: relative;
   overflow: hidden;
   background: transparent;
+  padding-top: 100px;
+  padding-bottom: 60px;
 }
 
 .contact-bg {

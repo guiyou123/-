@@ -87,18 +87,7 @@ function ExperiencePage() {
 
 // 联系页
 function ContactPage() {
-  return (
-    <>
-      <PageHero
-        num="07"
-        label="CONTACT"
-        title="联系我"
-        subtitle="Get In Touch"
-        desc="无论是品牌视觉全案、AI内容生产、宣传片制作，还是求职合作机会，欢迎随时联系。"
-      />
-      <Contact />
-    </>
-  )
+  return <Contact />
 }
 
 function App() {

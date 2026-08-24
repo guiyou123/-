@@ -20,6 +20,10 @@ export default function Contact() {
             <span className="accent">增长的一部分。</span>
           </h2>
 
+          <p className="contact-desc-mag">
+            无论是品牌视觉全案、AI内容生产、宣传片制作，还是求职合作机会，欢迎随时联系。
+          </p>
+
           <div className="contact-actions-mag">
             <button className="contact-email-btn" onClick={copyEmail}>
               {copied ? '已复制 ✓' : '复制邮箱'}
