@@ -42,7 +42,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-inner">
         <div className="nav-logo" onClick={() => scrollTo('hero')} style={{ cursor: 'pointer' }}>
-          侯贵有<span>.</span>
+          HGY<span>.</span>
         </div>
         <nav>
           <ul className="nav-links">
