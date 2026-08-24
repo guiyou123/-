@@ -40,3 +40,5 @@ pnpm-debug.log*
 .cache/
 .parcel-cache/
 .vite/
+
+mobile-screenshot.png
