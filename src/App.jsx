@@ -1,5 +1,5 @@
-import Grainient from './components/Grainient/Grainient'
-import Navbar from './components/Navbar'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
 import Hero from './components/Hero'
 import Profile from './components/Profile'
 import Experience from './components/Experience'
@@ -8,62 +8,61 @@ import Gallery from './components/Gallery'
 import Advantages from './components/Advantages'
 import AIWorkflow from './components/AIWorkflow'
 import Contact from './components/Contact'
-import ScrollAnimations from './components/ScrollAnimations'
+
+// 首页：Hero + 个人简介
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <Profile />
+    </>
+  )
+}
+
+// 精选项目页
+function ProjectsPage() {
+  return <Projects />
+}
+
+// 作品展示页
+function GalleryPage() {
+  return <Gallery />
+}
+
+// 核心能力页：能力 + AI工作流
+function AdvantagesPage() {
+  return (
+    <>
+      <Advantages />
+      <AIWorkflow />
+    </>
+  )
+}
+
+// 工作经历页
+function ExperiencePage() {
+  return <Experience />
+}
+
+// 联系页
+function ContactPage() {
+  return <Contact />
+}
 
 function App() {
   return (
-    <>
-      {/* 全局动态渐变背景 */}
-      <div className="global-bg">
-        <Grainient
-          color1="#6e8cff"
-          color2="#0a0a14"
-          color3="#050508"
-          timeSpeed={0.12}
-          colorBalance={0.0}
-          warpStrength={0.5}
-          warpFrequency={3.5}
-          warpSpeed={0.8}
-          warpAmplitude={10}
-          blendAngle={0.0}
-          blendSoftness={0.15}
-          rotationAmount={250.0}
-          noiseScale={1.2}
-          grainAmount={0.03}
-          grainScale={2.0}
-          grainAnimated={false}
-          contrast={1.2}
-          gamma={1.0}
-          saturation={1.0}
-          centerX={0.1}
-          centerY={-0.2}
-          zoom={2.0}
-        />
-      </div>
-
-      <Navbar />
-      <ScrollAnimations />
-      <main>
-        <Hero />
-        <Profile />
-        <Experience />
-        <Projects />
-        <Gallery />
-        <Advantages />
-        <AIWorkflow />
-        <Contact />
-      </main>
-
-      {/* 全局页脚 */}
-      <footer className="site-footer">
-        <div className="container">
-          <div className="footer-mag">
-            <span>HOU GUIYOU / 2026</span>
-            <span>Designed & Built with passion</span>
-          </div>
-        </div>
-      </footer>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/advantages" element={<AdvantagesPage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

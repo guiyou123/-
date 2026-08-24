@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { playHeroOpening } from '../animations'
 
 export default function Hero() {
@@ -7,11 +8,6 @@ export default function Hero() {
   useEffect(() => {
     playHeroOpening(heroRef)
   }, [])
-
-  const scrollTo = (id) => {
-    const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
 
   return (
     <section className="hero" id="hero" ref={heroRef}>
@@ -55,10 +51,10 @@ export default function Hero() {
               <span className="role-label">VISUAL DESIGNER · AI DESIGNER · BRAND DESIGNER</span>
               <span className="role-cn">视觉设计 · AI设计 · 品牌设计</span>
             </div>
-            <button className="hero-cta-mag" onClick={() => scrollTo('projects')}>
+            <Link to="/projects" className="hero-cta-mag">
               查看作品
               <span className="arrow">↗</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -48,6 +48,11 @@ main {
   z-index: 1;
 }
 
+/* 非首页模块顶部间距，避开固定导航栏 */
+main > section:not(.hero) {
+  padding-top: 120px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -171,6 +176,14 @@ img {
 }
 
 .nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-links a.active::after {
   width: 100%;
 }
 
