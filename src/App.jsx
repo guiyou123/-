@@ -53,6 +53,16 @@ function App() {
         <AIWorkflow />
         <Contact />
       </main>
+
+      {/* 全局页脚 */}
+      <footer className="site-footer">
+        <div className="container">
+          <div className="footer-mag">
+            <span>HOU GUIYOU / 2026</span>
+            <span>Designed & Built with passion</span>
+          </div>
+        </div>
+      </footer>
     </>
   )
 }

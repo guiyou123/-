@@ -2294,6 +2294,14 @@ img {
   text-transform: uppercase;
 }
 
+.site-footer {
+  position: relative;
+  z-index: 1;
+  background: rgba(8, 8, 10, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
 /* 隐藏旧样式中不需要的元素 */
 .section-label,
 .section-title,

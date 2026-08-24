@@ -55,11 +55,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-
-      <div className="footer-mag">
-        <span>HOU GUIYOU / 2026</span>
-        <span>Designed & Built with passion</span>
-      </div>
     </section>
   )
 }
