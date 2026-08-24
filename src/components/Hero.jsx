@@ -21,6 +21,7 @@ export default function Hero() {
         loop
         playsInline
         preload="metadata"
+        poster="/projects/lion-factory-cover.jpg"
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
