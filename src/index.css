@@ -2639,10 +2639,22 @@ img {
 .project-card-large-image {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 50%;
   height: 100%;
   overflow: hidden;
+}
+
+.project-card-large-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(18, 18, 24, 0.85), transparent);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .project-card-large-image img,
@@ -2673,7 +2685,8 @@ img {
 .project-card-large-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(10, 10, 14, 0.97) 0%, rgba(10, 10, 14, 0.92) 35%, rgba(10, 10, 14, 0.6) 55%, rgba(10, 10, 14, 0.2) 75%, transparent 100%);
+  background: linear-gradient(to right, rgba(18, 18, 24, 0.3) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .project-card-large-content {
