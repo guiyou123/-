@@ -43,7 +43,7 @@ function GalleryPage() {
       <PageHero
         num="04"
         label="PORTFOLIO GALLERY"
-        title="作品展示"
+        title="设计🔗产品和用户"
         subtitle="Portfolio Archive"
         desc="按品牌与项目分类的完整作品档案，涵盖视觉识别、海报物料、IP设计、视频制作等多类型产出。"
       />
@@ -59,7 +59,7 @@ function AdvantagesPage() {
       <PageHero
         num="05"
         label="CAPABILITIES"
-        title="核心能力"
+        title="做出设计，也做出结果"
         subtitle="What I Do"
         desc="覆盖品牌视觉全链路、AI内容生产、视频摄制与剪辑的综合能力体系，以设计+技术的复合视角交付项目。"
       />
@@ -76,7 +76,7 @@ function ExperiencePage() {
       <PageHero
         num="02"
         label="EXPERIENCE"
-        title="工作经历"
+        title="从设计，到商业结果"
         subtitle="Career Path"
         desc="7年视觉设计与品牌营销从业经历，从设计服务到品牌方内部，持续深耕医疗、教育、制造等行业的视觉内容生产。"
       />
