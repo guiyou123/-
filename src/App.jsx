@@ -27,7 +27,7 @@ function ProjectsPage() {
       <PageHero
         num="03"
         label="SELECTED PROJECTS"
-        title="精选项目"
+        title="设计让每一个项目都不止于好看"
         subtitle="Selected Works"
         desc="从品牌视觉全案到AI内容生产，从宣传片独立制作到学术会议营销，以下是近年代表性项目的精选呈现。"
       />
@@ -43,7 +43,7 @@ function GalleryPage() {
       <PageHero
         num="04"
         label="PORTFOLIO GALLERY"
-        title="设计🔗产品和用户"
+        title="设计连接产品和用户"
         subtitle="Portfolio Archive"
         desc="按品牌与项目分类的完整作品档案，涵盖视觉识别、海报物料、IP设计、视频制作等多类型产出。"
       />
