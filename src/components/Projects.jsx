@@ -1,14 +1,14 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import ProjectModal from './ProjectModal'
 
 const projects = [
   {
     num: '01',
-    category: 'VIDEO PRODUCTION · AI + 实拍',
-    title: '莱恩工厂宣传片',
-    desc: '独立完成从策划、摄影到后期剪辑的全流程制作。融合AI脚本生成、AI文案、AI配音、AI视频生成与工厂实地拍摄素材，以一人团队实现专业级宣传片产出。',
-    tags: ['AI视频生成', 'AI配音', '实拍摄影', '剪辑调色'],
-    result: '1人独立完成全流程，AI+实拍结合',
+    category: 'VIDEO PRODUCTION 路 AI + 瀹炴媿',
+    title: '鑾辨仼宸ュ巶瀹ｄ紶鐗?,
+    desc: '鐙珛瀹屾垚浠庣瓥鍒掋€佹憚褰卞埌鍚庢湡鍓緫鐨勫叏娴佺▼鍒朵綔銆傝瀺鍚圓I鑴氭湰鐢熸垚銆丄I鏂囨銆丄I閰嶉煶銆丄I瑙嗛鐢熸垚涓庡伐鍘傚疄鍦版媿鎽勭礌鏉愶紝浠ヤ竴浜哄洟闃熷疄鐜颁笓涓氱骇瀹ｄ紶鐗囦骇鍑恒€?,
+    tags: ['AI瑙嗛鐢熸垚', 'AI閰嶉煶', '瀹炴媿鎽勫奖', '鍓緫璋冭壊'],
+    result: '1浜虹嫭绔嬪畬鎴愬叏娴佺▼锛孉I+瀹炴媿缁撳悎',
     video: '/projects/lion-factory.mp4',
     image: '/projects/lion-factory-cover.jpg',
     media: [
@@ -17,76 +17,76 @@ const projects = [
   },
   {
     num: '02',
-    category: 'BRAND MARKETING · MEDICAL',
-    title: 'V-Check微检 · 新品发布营销',
-    desc: '连续主导三届消毒供应中心学术会议新品发布全案，以悬念式推广逻辑打造传播节奏，统一极简医疗留白风视觉体系。',
-    tags: ['品牌全案', '学术会议', '海报设计', 'AI合成'],
-    result: '连续3届学术会议全案，全渠道物料统一',
+    category: 'BRAND MARKETING 路 MEDICAL',
+    title: 'V-Check寰 路 鏂板搧鍙戝竷钀ラ攢',
+    desc: '杩炵画涓诲涓夊眾娑堟瘨渚涘簲涓績瀛︽湳浼氳鏂板搧鍙戝竷鍏ㄦ锛屼互鎮康寮忔帹骞块€昏緫鎵撻€犱紶鎾妭濂忥紝缁熶竴鏋佺畝鍖荤枟鐣欑櫧椋庤瑙変綋绯汇€?,
+    tags: ['鍝佺墝鍏ㄦ', '瀛︽湳浼氳', '娴锋姤璁捐', 'AI鍚堟垚'],
+    result: '杩炵画3灞婂鏈細璁叏妗堬紝鍏ㄦ笭閬撶墿鏂欑粺涓€',
     image: '/projects/vcheck-poster.jpg',
     media: [
-      { type: 'image', src: '/works/V-Check产品海报.jpg' },
-      { type: 'image', src: '/works/V-check新品海报.jpg' },
-      { type: 'image', src: '/works/V-Check产品图1.jpg' },
-      { type: 'image', src: '/works/V-Check产品图卡片.jpg' },
+      { type: 'image', src: '/works/V-Check浜у搧娴锋姤.jpg' },
+      { type: 'image', src: '/works/V-check鏂板搧娴锋姤.jpg' },
+      { type: 'image', src: '/works/V-Check浜у搧鍥?.jpg' },
+      { type: 'image', src: '/works/V-Check浜у搧鍥惧崱鐗?jpg' },
     ],
   },
   {
     num: '03',
-    category: 'BRAND IDENTITY · VISUAL SYSTEM',
-    title: '易博士清洗剂 · 品牌视觉系统',
-    desc: '为旗下清洗剂品牌建立"极简医疗留白风、蓝白医疗色"视觉规范，统一海报、宣传册、产品外箱、社交媒体配图等全渠道物料设计语言。',
-    tags: ['VI系统', '品牌规范', '物料设计'],
-    result: '10+素材类型，全渠道视觉统一',
+    category: 'BRAND IDENTITY 路 VISUAL SYSTEM',
+    title: '鏄撳崥澹竻娲楀墏 路 鍝佺墝瑙嗚绯荤粺',
+    desc: '涓烘棗涓嬫竻娲楀墏鍝佺墝寤虹珛"鏋佺畝鍖荤枟鐣欑櫧椋庛€佽摑鐧藉尰鐤楄壊"瑙嗚瑙勮寖锛岀粺涓€娴锋姤銆佸浼犲唽銆佷骇鍝佸绠便€佺ぞ浜ゅ獟浣撻厤鍥剧瓑鍏ㄦ笭閬撶墿鏂欒璁¤瑷€銆?,
+    tags: ['VI绯荤粺', '鍝佺墝瑙勮寖', '鐗╂枡璁捐'],
+    result: '10+绱犳潗绫诲瀷锛屽叏娓犻亾瑙嗚缁熶竴',
     image: '/projects/yiboshi-cover.jpg',
     media: [
-      { type: 'image', src: '/works/视频封面E-FOAM常规款.jpg' },
-      { type: 'image', src: '/works/新加坡彩页定稿_画板 1.jpg' },
-      { type: 'image', src: '/works/新加坡彩页定稿-02.jpg' },
-      { type: 'image', src: '/works/新加坡彩页定稿-03.jpg' },
-      { type: 'image', src: '/works/新加坡彩页定稿-04.jpg' },
-      { type: 'image', src: '/works/FOAM BOX泡沫发生器外箱.jpg' },
-      { type: 'image', src: '/works/无纺布产品外箱.png' },
-      { type: 'image', src: '/works/清洗剂产品外箱.jpg' },
+      { type: 'image', src: '/works/瑙嗛灏侀潰E-FOAM甯歌娆?jpg' },
+      { type: 'image', src: '/works/鏂板姞鍧″僵椤靛畾绋縚鐢绘澘 1.jpg' },
+      { type: 'image', src: '/works/鏂板姞鍧″僵椤靛畾绋?02.jpg' },
+      { type: 'image', src: '/works/鏂板姞鍧″僵椤靛畾绋?03.jpg' },
+      { type: 'image', src: '/works/鏂板姞鍧″僵椤靛畾绋?04.jpg' },
+      { type: 'image', src: '/works/FOAM BOX娉℃搏鍙戠敓鍣ㄥ绠?jpg' },
+      { type: 'image', src: '/works/鏃犵汉甯冧骇鍝佸绠?png' },
+      { type: 'image', src: '/works/娓呮礂鍓備骇鍝佸绠?jpg' },
       { type: 'video', src: '/projects/yiboshi-rust-wipe.mp4' },
       { type: 'video', src: '/projects/yiboshi-pouch.mp4' },
     ],
   },
   {
     num: '04',
-    category: 'IP DESIGN · MASCOT',
-    title: '莱恩医疗吉祥物 · 狮小宝',
-    desc: '主导品牌吉祥物全案设计，从概念草图到最终落地，产出节日海报、咖啡周边、实验室场景等系列衍生物料，强化品牌亲和力与记忆点。',
-    tags: ['IP设计', '吉祥物', '周边衍生'],
-    result: '10+衍生物料，概念到落地全案',
+    category: 'IP DESIGN 路 MASCOT',
+    title: '鑾辨仼鍖荤枟鍚夌ゥ鐗?路 鐙皬瀹?,
+    desc: '涓诲鍝佺墝鍚夌ゥ鐗╁叏妗堣璁★紝浠庢蹇佃崏鍥惧埌鏈€缁堣惤鍦帮紝浜у嚭鑺傛棩娴锋姤銆佸挅鍟″懆杈广€佸疄楠屽鍦烘櫙绛夌郴鍒楄鐢熺墿鏂欙紝寮哄寲鍝佺墝浜插拰鍔涗笌璁板繂鐐广€?,
+    tags: ['IP璁捐', '鍚夌ゥ鐗?, '鍛ㄨ竟琛嶇敓'],
+    result: '10+琛嶇敓鐗╂枡锛屾蹇靛埌钀藉湴鍏ㄦ',
     image: '/projects/shixiaobao.jpg',
     media: [
-      { type: 'image', src: '/works/狮小宝.jpg' },
-      { type: 'image', src: '/works/狮小宝1.png' },
-      { type: 'image', src: '/works/狮小宝2.jpg' },
-      { type: 'image', src: '/works/狮小宝3.jpg' },
-      { type: 'image', src: '/works/狮小宝咖啡1.png' },
-      { type: 'image', src: '/works/狮小宝咖啡2.png' },
-      { type: 'image', src: '/works/2024新春活动海报.jpg' },
-      { type: 'image', src: '/works/儿童节海报.jpg' },
-      { type: 'image', src: '/works/AI升成圣诞氛围图.png' },
-      { type: 'image', src: '/works/实验室场景图..jpg' },
+      { type: 'image', src: '/works/鐙皬瀹?jpg' },
+      { type: 'image', src: '/works/鐙皬瀹?.png' },
+      { type: 'image', src: '/works/鐙皬瀹?.jpg' },
+      { type: 'image', src: '/works/鐙皬瀹?.jpg' },
+      { type: 'image', src: '/works/鐙皬瀹濆挅鍟?.png' },
+      { type: 'image', src: '/works/鐙皬瀹濆挅鍟?.png' },
+      { type: 'image', src: '/works/2024鏂版槬娲诲姩娴锋姤.jpg' },
+      { type: 'image', src: '/works/鍎跨鑺傛捣鎶?jpg' },
+      { type: 'image', src: '/works/AI鍗囨垚鍦ｈ癁姘涘洿鍥?png' },
+      { type: 'image', src: '/works/瀹為獙瀹ゅ満鏅浘..jpg' },
       { type: 'video', src: '/projects/shixiaobao-animation.mp4' },
     ],
   },
   {
     num: '05',
-    category: 'CREATIVE DESIGN · MEDICAL',
-    title: '晖致医药 · 文创设计项目',
-    desc: '创作IP"V宝"及多个衍生形象，产出校招推文、工厂介绍、空宣会直播装修、双选会物料，获晖致医药2022年度最佳合作伙伴。',
-    tags: ['IP创作', '文创物料', '印刷落地'],
-    result: '获晖致医药2022年度最佳合作伙伴',
+    category: 'CREATIVE DESIGN 路 MEDICAL',
+    title: '鏅栬嚧鍖昏嵂 路 鏂囧垱璁捐椤圭洰',
+    desc: '鍒涗綔IP"V瀹?鍙婂涓鐢熷舰璞★紝浜у嚭鏍℃嫑鎺ㄦ枃銆佸伐鍘備粙缁嶃€佺┖瀹ｄ細鐩存挱瑁呬慨銆佸弻閫変細鐗╂枡锛岃幏鏅栬嚧鍖昏嵂2022骞村害鏈€浣冲悎浣滀紮浼淬€?,
+    tags: ['IP鍒涗綔', '鏂囧垱鐗╂枡', '鍗板埛钀藉湴'],
+    result: '鑾锋櫀鑷村尰鑽?022骞村害鏈€浣冲悎浣滀紮浼?,
     image: '/projects/huizhi-cover.png',
     media: [
-      { type: 'image', src: '/works/df9ac87d-3a69-41ea-9430-bf26ec6db311.png' },
-      { type: 'image', src: '/works/aff282c0-9d88-4d2d-9adf-7f5fe4ae20b7.png' },
-      { type: 'image', src: '/works/99799895-69af-48c5-b75e-54cd2b34f734.png' },
-      { type: 'image', src: '/works/47426b1a-5d72-445d-a0cc-059af54ba9db.png' },
-      { type: 'image', src: '/works/56434c98-2071-40ad-b263-f7ecd70237b5.png' },
+      { type: 'image', src: '/works/df9ac87d-3a69-41ea-9430-bf26ec6db311.jpg' },
+      { type: 'image', src: '/works/aff282c0-9d88-4d2d-9adf-7f5fe4ae20b7.jpg' },
+      { type: 'image', src: '/works/99799895-69af-48c5-b75e-54cd2b34f734.jpg' },
+      { type: 'image', src: '/works/47426b1a-5d72-445d-a0cc-059af54ba9db.jpg' },
+      { type: 'image', src: '/works/56434c98-2071-40ad-b263-f7ecd70237b5.jpg' },
     ],
   },
 ]
@@ -104,7 +104,7 @@ export default function Projects() {
               className="project-card-large"
               onClick={() => setActiveProject(project)}
             >
-              {/* 右侧背景图/视频 */}
+              {/* 鍙充晶鑳屾櫙鍥?瑙嗛 */}
               <div className="project-card-large-image">
                 {project.video ? (
                   <video
@@ -127,7 +127,7 @@ export default function Projects() {
                 <div className="project-card-large-overlay" />
               </div>
 
-              {/* 左侧内容 */}
+              {/* 宸︿晶鍐呭 */}
               <div className="project-card-large-content">
                 <div className="project-card-large-top">
                   <span className="project-card-large-num">{project.num}</span>
@@ -139,7 +139,7 @@ export default function Projects() {
                 <p className="project-card-large-desc">{project.desc}</p>
 
                 <div className="project-card-large-result">
-                  <span className="result-label">核心成果</span>
+                  <span className="result-label">鏍稿績鎴愭灉</span>
                   <span className="result-text">{project.result}</span>
                 </div>
 
@@ -150,9 +150,9 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* 右下角查看链接 */}
+              {/* 鍙充笅瑙掓煡鐪嬮摼鎺?*/}
               <div className="project-card-large-more">
-                <span>查看项目详情 →</span>
+                <span>鏌ョ湅椤圭洰璇︽儏 鈫?/span>
               </div>
             </div>
           ))}
