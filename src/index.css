@@ -1615,7 +1615,7 @@ img {
 
 .module-title {
   margin-left: auto;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   color: var(--text-secondary);
   letter-spacing: 2px;
@@ -1754,28 +1754,28 @@ img {
 }
 
 .profile-name {
-  font-size: 28px;
+  font-size: 36px;
   font-weight: 800;
   margin: 0;
 }
 
 .profile-role-tag {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--accent);
   font-weight: 500;
   letter-spacing: 1px;
 }
 
 .profile-title {
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 700;
   line-height: 1.3;
   margin-bottom: 24px;
 }
 
 .profile-text {
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.9;
   color: var(--text-secondary);
   margin-bottom: 32px;
 }
@@ -1812,21 +1812,21 @@ img {
 }
 
 .number-value {
-  font-size: 36px;
+  font-size: 52px;
   font-weight: 800;
   color: var(--accent);
   line-height: 1;
 }
 
 .number-label {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text-primary);
   font-weight: 500;
   margin-top: 8px;
 }
 
 .number-sub {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1878,26 +1878,26 @@ img {
 }
 
 .timeline-company {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
 }
 
 .timeline-brand {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--accent);
   font-weight: 500;
 }
 
 .timeline-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: 12px;
 }
 
 .timeline-desc {
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 16px;
 }
@@ -1923,7 +1923,7 @@ img {
 }
 
 .result-text {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text-primary);
   font-weight: 500;
 }
@@ -2101,7 +2101,7 @@ img {
 }
 
 .capability-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 8px;
   transition: color 0.3s ease;
@@ -2112,8 +2112,8 @@ img {
 }
 
 .capability-desc {
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.8;
   color: var(--text-secondary);
 }
 
@@ -2171,14 +2171,14 @@ img {
 }
 
 .workflow-step-title {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
 }
 
 .workflow-step-desc {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .workflow-arrow {
@@ -2213,11 +2213,11 @@ img {
 }
 
 .contact-desc-mag {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-secondary);
   max-width: 500px;
   margin: 0 auto 48px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .contact-actions-mag {
@@ -2284,7 +2284,7 @@ img {
 }
 
 .info-value {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-primary);
 }
 
@@ -2418,7 +2418,7 @@ img {
 }
 
 .project-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1.3;
   margin: 0;
@@ -2430,8 +2430,8 @@ img {
 }
 
 .project-desc {
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.8;
   color: var(--text-secondary);
   margin: 0;
   display: -webkit-box;
@@ -2741,25 +2741,27 @@ img {
   .hero-title { font-size: clamp(36px, 12vw, 60px); letter-spacing: -1px; }
   .hero-subtitle-mag { font-size: 14px; margin-bottom: 40px; }
   .hero-cta-mag { width: 100%; justify-content: center; padding: 14px 24px; }
-  .profile-title { font-size: 24px; }
-  .profile-name { font-size: 22px; }
-  .profile-role-tag { font-size: 12px; }
-  .profile-text { font-size: 13px; line-height: 1.7; }
+  .profile-title { font-size: 28px; }
+  .profile-name { font-size: 26px; }
+  .profile-role-tag { font-size: 13px; }
+  .profile-text { font-size: 14px; line-height: 1.8; }
   .profile-numbers { grid-template-columns: 1fr 1fr; gap: 20px; padding-top: 24px; }
-  .number-value { font-size: 28px; }
-  .number-label { font-size: 12px; }
+  .number-value { font-size: 36px; }
+  .number-label { font-size: 13px; }
   .timeline-mag-item { padding: 24px 0; }
-  .timeline-company { font-size: 16px; }
-  .timeline-title { font-size: 14px; }
-  .timeline-desc { font-size: 13px; }
+  .timeline-company { font-size: 18px; }
+  .timeline-title { font-size: 16px; }
+  .timeline-desc { font-size: 14px; }
   .timeline-result { flex-direction: column; align-items: flex-start; gap: 4px; }
   .project-mag-item { padding: 24px 0; }
   .project-mag-title { font-size: 18px; }
   .project-mag-desc { font-size: 13px; }
   .metric-value { font-size: 18px; }
+  .project-title { font-size: 20px; }
+  .project-desc { font-size: 13px; -webkit-line-clamp: 2; }
   .capability-item { padding: 20px 0; }
-  .capability-title { font-size: 16px; }
-  .capability-desc { font-size: 13px; }
+  .capability-title { font-size: 20px; }
+  .capability-desc { font-size: 14px; }
   .workflow-steps { grid-template-columns: 1fr; }
   .workflow-step { padding: 24px 20px; }
   .ai-workflow-title { font-size: 32px; }
