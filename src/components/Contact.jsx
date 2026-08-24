@@ -33,21 +33,6 @@ export default function Contact() {
               {email}
             </a>
           </div>
-
-          <div className="contact-info-mag">
-            <div className="contact-info-col">
-              <span className="info-label">PHONE</span>
-              <span className="info-value">18340837605</span>
-            </div>
-            <div className="contact-info-col">
-              <span className="info-label">EMAIL</span>
-              <span className="info-value">{email}</span>
-            </div>
-            <div className="contact-info-col">
-              <span className="info-label">LOCATION</span>
-              <span className="info-value">大连 · 金普新区</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
